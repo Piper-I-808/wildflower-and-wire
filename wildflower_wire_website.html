@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildflower & Wire | Custom Everyday Jewelry</title>
+  <style>
+    /* CSS RESET & PLAYFUL BRIGHT VARIABLES */
+    :root {
+      --color-sage: #8DA37A; /* Fresher, brighter sage */
+      --color-sage-light: #EBF2E6;
+      --color-gold: #C5963E; /* Richer sunny gold */
+      --color-gold-light: #FFF8E7;
+      --color-terracotta: #E06243; /* Vibrant playful coral-terracotta */
+      --color-terracotta-light: #FFEBE5;
+      --color-bg: #FFFCF5; /* Bright, sunny cream */
+      --color-card-bg: #FFFFFF;
+      --color-text-main: #1F281C;
+      --color-text-muted: #4B5746;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --radius: 20px;
+      --shadow: 0 8px 30px rgba(197, 150, 62, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling when needed */
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden; /* Prevents horizontal scrolling */
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      font-family: var(--font-family);
+      line-height: 1.5;
+      font-size: 18px;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3 {
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      color: var(--color-text-main);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin-bottom: 16px;
+      color: var(--color-text-main);
+    }
+
+    p {
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+
+    .strong-text {
+      color: var(--color-text-main);
+      font-weight: 700;
+    }
+
+    /* CONTAINER & SECTIONS */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 2px dashed rgba(141, 163, 122, 0.25);
+    }
+
+    /* HEADER / BRAND & TOP RIGHT BUTTON */
+    header {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap; /* Wraps cleanly on tiny screens */
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--color-gold);
+      background: var(--color-gold-light);
+      padding: 8px 18px;
+      border-radius: 40px;
+      border: 2px solid var(--color-gold);
+    }
+
+    .logo-badge svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* HEADER BUTTON STYLES - Top Right */
+    .btn-header {
+      display: inline-block;
+      background-color: var(--color-terracotta);
+      color: white;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 0 #B54227, 0 6px 12px rgba(224, 98, 67, 0.25);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-header:hover {
+      background-color: #EE6B4C;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #B54227, 0 10px 16px rgba(224, 98, 67, 0.3);
+    }
+
+    .btn-header:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #B54227;
+    }
+
+    /* SECTION 1: HERO */
+    .hero {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 64px;
+    }
+
+    .tagline {
+      display: inline-block;
+      background-color: var(--color-sage-light);
+      color: var(--color-sage);
+      border: 2px solid var(--color-sage);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-subtext {
+      font-size: 1.3rem;
+      color: var(--color-text-main);
+      max-width: 650px;
+      margin: 0 auto 24px auto;
+      font-weight: 500;
+    }
+
+    .hero-image-box {
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background-color: var(--color-card-bg);
+      margin-top: 32px;
+      border: 4px solid var(--color-sage);
+    }
+
+    .hero-image-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* PRIMARY BOTTOM BUTTON STYLES */
+    .btn-primary {
+      display: inline-block;
+      width: 100%;
+      max-width: 100%;
+      background-color: var(--color-terracotta);
+      color: white;
+      font-size: 1.35rem;
+      font-weight: 800;
+      padding: 22px 36px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 0 #B54227, 0 12px 20px rgba(224, 98, 67, 0.3);
+      transition: all 0.15s ease;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background-color: #EE6B4C;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #B54227, 0 16px 24px rgba(224, 98, 67, 0.35);
+    }
+
+    .btn-primary:active {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #B54227;
+    }
+
+    /* SECTION 2: PROBLEM */
+    .problem-box {
+      background-color: var(--color-terracotta-light);
+      border-left: 8px solid var(--color-terracotta);
+      padding: 32px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 24px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .quote {
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--color-terracotta);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .moment-wrong {
+      font-size: 1.1rem;
+      color: var(--color-text-main);
+    }
+
+    /* SECTION 3: WHAT THEY GET & THE PRICE */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .step-card {
+      background: var(--color-card-bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      border: 2px solid var(--color-sage-light);
+    }
+
+    .step-number {
+      background: var(--color-gold);
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(197, 150, 62, 0.3);
+    }
+
+    .price-tag {
+      background: linear-gradient(135deg, var(--color-sage) 0%, #768E63 100%);
+      color: white;
+      padding: 40px 32px;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-top: 32px;
+      box-shadow: 0 10px 25px rgba(141, 163, 122, 0.4);
+    }
+
+    .price-amount {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin: 8px 0;
+      letter-spacing: -0.03em;
+      color: #FFFFFF;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .guarantee-badge {
+      background: rgba(255, 255, 255, 0.22);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* SECTION 4: PROOF */
+    .proof-card {
+      background: var(--color-gold-light);
+      border: 3px solid var(--color-gold);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .proof-quote {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .proof-author {
+      font-size: 1rem;
+      color: var(--color-gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SECTION 5: OBJECTIONS / FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .faq-item {
+      background: var(--color-card-bg);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 2px solid var(--color-gold-light);
+    }
+
+    .faq-item h3 {
+      color: var(--color-terracotta);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    /* SECTION 6: CALL TO ACTION */
+    .cta-section {
+      text-align: center;
+      padding: 70px 32px;
+      background-color: #FFFFFF;
+      border-radius: var(--radius);
+      margin-bottom: 64px;
+      box-shadow: 0 12px 40px rgba(224, 98, 67, 0.12);
+      border: 3px solid var(--color-terracotta);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE FIXES */
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      header {
+        justify-content: center;
+      }
+      section {
+        padding: 48px 0;
+      }
+      .problem-box, .price-tag, .proof-card, .cta-section {
+        padding: 24px 18px;
+      }
+      .price-amount {
+        font-size: 2.8rem;
+      }
+      .btn-primary {
+        padding: 18px 24px;
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="logo-badge">
+        <!-- Embedded Wire Flower SVG Icon -->
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5">
+          <path d="M50 85 C50 85 48 55 50 45 C52 35 60 30 60 30" stroke="#C5963E"/>
+          <path d="M50 45 C40 40 35 50 45 58 C55 66 50 45 50 45 Z" stroke="#C5963E"/>
+          <path d="M50 45 C60 40 65 50 55 58 C45 66 50 45 50 45 Z" stroke="#C5963E"/>
+          <path d="M50 45 C50 30 35 30 42 42 Z" stroke="#C5963E"/>
+          <path d="M50 45 C50 30 65 30 58 42 Z" stroke="#C5963E"/>
+        </svg>
+        Wildflower & Wire
+      </div>
+
+      <!-- TOP RIGHT BUTTON --> 
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZC3AkzJodzehmkg9qeRymHq654EkLPwg1QTGeS_n_15n1Kg/viewform" id="top-button" class="btn-header" target="_blank" rel="noopener noreferrer">GET IN TOUCH</a>
+    </header>
+
+    <!-- SECTION 1: BIG HEADLINE & HOW IT WORKS -->
+    <section>
+      <div class="hero">
+        <span class="tagline">Sustainable • Custom • Handcrafted</span>
+        <h1>Wildflower & Wire is a jewelry studio that helps customize your personal style.</h1>
+        <p class="hero-subtext">You bring us pieces you don't wear, and we turn them into custom, unique everyday jewelry you will actually love.</p>
+
+        <!-- Placeholder Image: Custom Jewelry Result -->
+        <div class="hero-image-box" aria-label="A modern minimalist gold wire bracelet and necklace set on a plain stone surface.">
+          <svg viewBox="0 0 600 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="350" fill="#FFFCF5"/>
+            <!-- Background Accent Circle -->
+            <circle cx="300" cy="175" r="120" fill="#8DA37A" fill-opacity="0.25"/>
+            <!-- Ring SVG Representation -->
+            <ellipse cx="230" cy="180" rx="42" ry="22" stroke="#C5963E" stroke-width="7" fill="none"/>
+            <path d="M220 160 L240 160 L230 144 Z" fill="#E06243"/>
+            <!-- Necklace/Wire SVG Representation -->
+            <path d="M300 90 Q 390 170 410 240 Q 340 265 300 240 Q 270 170 300 90 Z" stroke="#C5963E" stroke-width="6" fill="none"/>
+            <circle cx="355" cy="248" r="10" fill="#E06243"/>
+            <text x="300" y="315" text-anchor="middle" fill="#1F281C" font-size="17" font-family="sans-serif" font-weight="700">Your Old Pieces → Unique Everyday Jewelry</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE PROBLEM -->
+    <section>
+      <h2>The Real Problem</h2>
+      <div class="problem-box">
+        <div class="quote">"I have a box full of jewelry in my bedroom that I never wear, but I can't bring myself to throw it away."</div>
+        <div class="moment-wrong">
+          <strong>Here is when it goes wrong:</strong> You get dressed in the morning, open your jewelry dish, pick up an old chain, and put it right back down because it just isn't "you" anymore. So you walk out the door wearing nothing at all.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHAT THEY GET & THE PRICE -->
+    <section>
+      <h2>How It Works</h2>
+      <p>No complicated forms or confusing design choices. We keep it simple:</p>
+
+      <div class="step-list">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div>
+            <div class="strong-text">Tell me what you like</div>
+            <p>Show me the jewelry sitting at home that you do not wear, and tell me your daily style preferences.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div>
+            <div class="strong-text">I handle all the work</div>
+            <p>I reshape, wire-wrap, and convert your pieces into a fresh, durable, unique item made specifically for everyday use.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div>
+            <div class="strong-text">Ready in 5 days</div>
+            <p>Your brand new favorite piece is completed and handed to you within five days.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-tag">
+        <h3 style="font-size: 1.6rem;">Flat Simple Pricing</h3>
+        <div class="price-amount">$20–$25</div>
+        <p style="color: #F8FAF7; font-weight:
